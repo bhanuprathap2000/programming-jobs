@@ -14,6 +14,7 @@ import NewJobModal from './components/Job/NewJobModal';
 import { firebase, firestore, app } from '../src/firebase/config';
 import { Close } from '@material-ui/icons';
 import ViewJobModal from './components/Job/ViewJobModal';
+
 export default () => {
 	const [jobs, setJobs] = useState([]);
 	const [loading, setLoading] = useState(true);
@@ -102,7 +103,7 @@ export default () => {
 											my={2}
 											display="flex"
 											justifyContent="flex-end">
-											<IconButton>
+											<IconButton style={{ borderRadius: 0 }}>
 												<Close size={20} />
 												Custom Search
 											</IconButton>

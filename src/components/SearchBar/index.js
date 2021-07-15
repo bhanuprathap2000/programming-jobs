@@ -50,6 +50,7 @@ export default ({ fectchJobsCustom }) => {
 			<Grid container spacing={2}>
 				<Grid item xs={6} md={4}>
 					<Select
+						fullWidth
 						name="type"
 						value={jobSearch.type}
 						onChange={handleChange}
@@ -62,6 +63,7 @@ export default ({ fectchJobsCustom }) => {
 				</Grid>
 				<Grid item xs={6} md={4}>
 					<Select
+						fullWidth
 						name="location"
 						value={jobSearch.location}
 						onChange={handleChange}
@@ -74,6 +76,8 @@ export default ({ fectchJobsCustom }) => {
 
 				<Grid item xs={12} md={4}>
 					<Button
+						style={{ padding: '12px' }}
+						fullWidth
 						onClick={search}
 						disabled={loading}
 						variant="contained"

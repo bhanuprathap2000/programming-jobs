@@ -5,10 +5,9 @@ import { Box, Grid, Typography, Button } from '@material-ui/core';
 export default ({ openNewJobModal }) => {
 	return (
 		<Box py={10} bgcolor="secondary.main" color="white">
-			<Grid container justify="space-between">
+			<Grid container justify="space-between" spacing={2}>
 				<Grid item md={10} xs={12}>
-					<Typography variant="h5">
-						{' '}
+					<Typography align="center" variant="h5">
 						<Box display="flex" justifyContent="flex-start" pl={8}>
 							Programming Jobs
 						</Box>
