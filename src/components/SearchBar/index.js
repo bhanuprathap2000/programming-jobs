@@ -4,6 +4,7 @@ import {
 	Select,
 	MenuItem,
 	Button,
+	Grid,
 	CircularProgress,
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
@@ -17,7 +18,7 @@ const useStyles = makeStyles({
 
 		'& > *': {
 			flex: 1,
-			height: '45px',
+			height: '100%',
 			margin: '8px',
 		},
 	},
@@ -46,33 +47,46 @@ export default ({ fectchJobsCustom }) => {
 
 	return (
 		<Box p={2} mt={-5} mb={2} className={classes.wrapper}>
-			<Select
-				name="type"
-				value={jobSearch.type}
-				onChange={handleChange}
-				variant="filled"
-				disableUnderline>
-				<MenuItem value="Full Time">Full Time</MenuItem>
-				<MenuItem value="Part Time">Part Time</MenuItem>
-				<MenuItem value="Contract">Contract</MenuItem>
-			</Select>
-			<Select
-				name="location"
-				value={jobSearch.location}
-				onChange={handleChange}
-				variant="filled"
-				disableUnderline>
-				<MenuItem value="Remote">Remote</MenuItem>
-				<MenuItem value="In-Office">In-Office</MenuItem>
-			</Select>
-			<Button
-				onClick={search}
-				disabled={loading}
-				variant="contained"
-				color="primary"
-				disableElevation>
-				{loading ? <CircularProgress color="secondary" size={22} /> : 'Search'}
-			</Button>
+			<Grid container spacing={2}>
+				<Grid item xs={6} md={4}>
+					<Select
+						name="type"
+						value={jobSearch.type}
+						onChange={handleChange}
+						variant="filled"
+						disableUnderline>
+						<MenuItem value="Full Time">Full Time</MenuItem>
+						<MenuItem value="Part Time">Part Time</MenuItem>
+						<MenuItem value="Contract">Contract</MenuItem>
+					</Select>
+				</Grid>
+				<Grid item xs={6} md={4}>
+					<Select
+						name="location"
+						value={jobSearch.location}
+						onChange={handleChange}
+						variant="filled"
+						disableUnderline>
+						<MenuItem value="Remote">Remote</MenuItem>
+						<MenuItem value="In-Office">In-Office</MenuItem>
+					</Select>
+				</Grid>
+
+				<Grid item xs={12} md={4}>
+					<Button
+						onClick={search}
+						disabled={loading}
+						variant="contained"
+						color="primary"
+						disableElevation>
+						{loading ? (
+							<CircularProgress color="secondary" size={22} />
+						) : (
+							'Search'
+						)}
+					</Button>
+				</Grid>
+			</Grid>
 		</Box>
 	);
 };
