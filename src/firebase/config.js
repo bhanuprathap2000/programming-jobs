@@ -1,5 +1,7 @@
-import app from 'firebase/app';
-import 'firebase/firestore';
+import app from 'firebase/app'; //core package
+import 'firebase/firestore'; //firestore
+import 'firebase/auth';//auth
+
 const firebaseConfig = {
 	apiKey: 'AIzaSyAPdTeZQlZKVLoCVMCxwujbla-6G4615Ao',
 	authDomain: 'programming-jobs.firebaseapp.com',
@@ -12,6 +14,26 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebase = app.initializeApp(firebaseConfig);
 
+//firestore instance
 const firestore = firebase.firestore();
 
-export { firebase, firestore, app };
+//auth instance
+const auth = firebase.auth();
+
+// since we are using the google as provider we need to create an instance of it.
+
+const googleProvider = new app.auth.GoogleAuthProvider()
+
+export const signInWithGoogle = () => {
+
+	auth.signInWithPopup(googleProvider)
+		.then(res => (console.log('logged the user')))
+	.catch(err=>console.log(err.message))
+	
+}
+
+export const signOut = () => {
+	auth.signOut().then(res => (console.log(res)))
+	.catch(err=>(console.log(err.message)))
+}
+export { firebase, firestore, app,auth };
