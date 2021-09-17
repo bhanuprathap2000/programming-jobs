@@ -11,7 +11,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import JobCard from './components/Job/JobCard';
 import NewJobModal from './components/Job/NewJobModal';
-import { firebase, firestore, app } from '../src/firebase/config';
+import { firebase, firestore } from '../src/firebase/config';
 import { Close } from '@material-ui/icons';
 import ViewJobModal from './components/Job/ViewJobModal';
 import UserProvider from './Providers/UserProvider';
@@ -70,7 +70,7 @@ export default () => {
 		setLoading(true);
 		await firestore.collection('jobs').add({
 			...jobDetails,
-			postedOn: app.firestore.FieldValue.serverTimestamp(),
+			postedOn: firebase.firestore.FieldValue.serverTimestamp(),
 		});
 		fectchJobs();
 	};
@@ -79,7 +79,7 @@ export default () => {
 		fectchJobs();
 	}, []);
 	return (
-		<div style={{overflowX: "hidden"} }>
+		<div style={{ overflowX: 'hidden' }}>
 			<ThemeProvider theme={theme}>
 				<UserProvider>
 					<Header openNewJobModal={() => setNewJobModal(true)} />
