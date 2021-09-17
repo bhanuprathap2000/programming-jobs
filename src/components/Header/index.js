@@ -42,8 +42,8 @@ export default ({ openNewJobModal }) => {
 						</Grid>
 					</Grid>
 				) : (
-					<Grid item md={2} xs={12}>
-						<Box display="flex" justifyContent="center">
+					<Grid item md={6} xs={12}>
+						<Box  my={1} display="flex" justifyContent="center">
 							<Button
 								onClick={signInWithGoogle}
 								variant="contained"

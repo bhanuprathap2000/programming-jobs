@@ -79,7 +79,7 @@ export default () => {
 		fectchJobs();
 	}, []);
 	return (
-		<>
+		<div style={{overflowX: "hidden"} }>
 			<ThemeProvider theme={theme}>
 				<UserProvider>
 					<Header openNewJobModal={() => setNewJobModal(true)} />
@@ -128,6 +128,6 @@ export default () => {
 					</Box>
 				</UserProvider>
 			</ThemeProvider>
-		</>
+		</div>
 	);
 };
