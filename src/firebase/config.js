@@ -1,6 +1,6 @@
 import app from 'firebase/app'; //core package
 import 'firebase/firestore'; //firestore
-import 'firebase/auth';//auth
+import 'firebase/auth'; //auth
 
 const firebaseConfig = {
 	apiKey: 'AIzaSyAPdTeZQlZKVLoCVMCxwujbla-6G4615Ao',
@@ -12,6 +12,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+
 const firebase = app.initializeApp(firebaseConfig);
 
 //firestore instance
@@ -22,18 +23,19 @@ const auth = firebase.auth();
 
 // since we are using the google as provider we need to create an instance of it.
 
-const googleProvider = new app.auth.GoogleAuthProvider()
+const googleProvider = new app.auth.GoogleAuthProvider();
 
 export const signInWithGoogle = () => {
-
-	auth.signInWithPopup(googleProvider)
-		.then(res => (console.log('logged the user')))
-	.catch(err=>console.log(err.message))
-	
-}
+	auth
+		.signInWithPopup(googleProvider)
+		.then((res) => console.log('logged the user'))
+		.catch((err) => console.log(err.message));
+};
 
 export const signOut = () => {
-	auth.signOut().then(res => (console.log(res)))
-	.catch(err=>(console.log(err.message)))
-}
-export { firebase, firestore, app,auth };
+	auth
+		.signOut()
+		.then((res) => console.log(res))
+		.catch((err) => console.log(err.message));
+};
+export { firebase, firestore, app, auth };
