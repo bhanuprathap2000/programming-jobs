@@ -3,12 +3,12 @@ import 'firebase/firestore';
 import 'firebase/auth';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyAPdTeZQlZKVLoCVMCxwujbla-6G4615Ao',
-	authDomain: 'programming-jobs.firebaseapp.com',
-	projectId: 'programming-jobs',
-	storageBucket: 'programming-jobs.appspot.com',
-	messagingSenderId: '624464927338',
-	appId: '1:624464927338:web:21e88e19ee9f1accbcc813',
+	apiKey: "AIzaSyAiEC8l0YCt58eZ547htOHmwCUTmE7lhoQ",
+    authDomain: "new-programming-jobs.firebaseapp.com",
+    projectId: "new-programming-jobs",
+    storageBucket: "new-programming-jobs.appspot.com",
+    messagingSenderId: "862516914968",
+    appId: "1:862516914968:web:6b4c21f2f873b65e430c6d"
 };
 
 // Initialize Firebase
